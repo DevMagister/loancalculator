@@ -38,3 +38,9 @@ Sample Payload:
   "type": "AUTO"
 }
 ```
+
+Future Plans
+------------
+- Add H2 Layer and Hibernate Integration
+- Add Angular 2 and ReactJS Front-ends
+- Update to support more complex model relationships
