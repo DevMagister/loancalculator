@@ -24,7 +24,7 @@ How to Use
 I would recommend using [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
  has it will easily allow you to hit the Restful Endpoints.
  
-#####There are only two end-points:
+##### There are only two end-points:
 *GET - `localhost:8080/loan-calculator`*
 
 *POST - `localhost:8080/loan-calculator`*
