@@ -32,10 +32,10 @@ I would recommend using [Postman](https://chrome.google.com/webstore/detail/post
 Sample Payload:
 ```json
 {
-	"numMonths": 5,
-	"loanAmount": 500,
-	"interest": 10.0,
-	"type": "AUTO"
+   "numMonths": 5,
+   "loanAmount": 500,
+   "interest": 10.0,
+   "type": "AUTO"
 }
 ```
 
