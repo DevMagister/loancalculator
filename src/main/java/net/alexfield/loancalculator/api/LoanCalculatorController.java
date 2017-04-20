@@ -1,5 +1,6 @@
-package net.alexfield.loancalculator;
+package net.alexfield.loancalculator.api;
 
+import net.alexfield.loancalculator.calculators.AutoLoanCalculator;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

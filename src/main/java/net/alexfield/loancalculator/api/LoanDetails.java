@@ -1,6 +1,6 @@
-package net.alexfield.loancalculator;
+package net.alexfield.loancalculator.api;
 
-import java.math.BigDecimal;
+import net.alexfield.loancalculator.calculators.LoanType;
 
 public class LoanDetails {
 

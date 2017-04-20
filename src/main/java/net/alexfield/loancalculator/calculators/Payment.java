@@ -1,4 +1,4 @@
-package net.alexfield.loancalculator;
+package net.alexfield.loancalculator.calculators;
 
 public class Payment {
 
