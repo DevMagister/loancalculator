@@ -1,56 +1,41 @@
 package net.alexfield.loancalculator.api;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import net.alexfield.loancalculator.calculators.LoanType;
 
 import java.math.BigDecimal;
 
+/**
+ * This class is a set of Loan Terms that the Loan Calculator will used to calculate monthly payments.
+ */
+@Getter
+@NoArgsConstructor
 public class LoanTerms {
 
+    /** Number of Months this loan is for */
     private int numMonths;
+
+    /** Total Loan Amount */
     private int loanAmount;
-    private BigDecimal apr;
+
+    /** Total interest for this Loan */
+    private BigDecimal interest;
+
+    /** Type of Loan */
     private LoanType type;
 
-    public LoanTerms() {
-    }
-
-    public LoanTerms(int numMonths, int loanAmount, BigDecimal apr) {
+    /**
+     * Creates a new Loan Terms with the given number of months, loan amount, and interest
+     *
+     * @param numMonths  number of months until this loan matures
+     * @param loanAmount total amount to be borrowed
+     * @param interest   interest on the loan
+     */
+    public LoanTerms(int numMonths, int loanAmount, BigDecimal interest) {
 
         this.numMonths = numMonths;
         this.loanAmount = loanAmount;
-        this.apr = apr;
-    }
-
-    public LoanType getType() {
-        return type;
-    }
-
-    public void setType(LoanType type) {
-        this.type = type;
-    }
-
-    public int getNumMonths() {
-
-        return numMonths;
-    }
-
-    public void setNumMonths(int numMonths) {
-        this.numMonths = numMonths;
-    }
-
-    public int getLoanAmount() {
-        return loanAmount;
-    }
-
-    public void setLoanAmount(int loanAmount) {
-        this.loanAmount = loanAmount;
-    }
-
-    public BigDecimal getApr() {
-        return apr;
-    }
-
-    public void setApr(BigDecimal apr) {
-        this.apr = apr;
+        this.interest = interest;
     }
 }

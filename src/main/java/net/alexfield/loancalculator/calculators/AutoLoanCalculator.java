@@ -4,20 +4,17 @@ import net.alexfield.loancalculator.api.LoanDetails;
 import net.alexfield.loancalculator.api.LoanTerms;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 public class AutoLoanCalculator extends AbstractLoanCalculator {
 
     private static final BigDecimal FEE_PERCENTAGE = new BigDecimal(.01);
 
-    private static DecimalFormat moneyFormat = new DecimalFormat("$#,###.00");
-
     public AutoLoanCalculator(LoanTerms loanTerms) {
-        super(loanTerms.getNumMonths(), loanTerms.getLoanAmount(), loanTerms.getApr());
+        super(loanTerms.getNumMonths(), loanTerms.getLoanAmount(), loanTerms.getInterest());
     }
 
     @Override
-    public LoanDetails getLoanPayments() {
+    public LoanDetails getLoanDetails() {
 
         /* Calculate Monthly Base Payment */
         BigDecimal monthlyBase = calculateBaseMonthlyPayment();
@@ -31,7 +28,7 @@ public class AutoLoanCalculator extends AbstractLoanCalculator {
         /* Calculate Monthly Payment */
         BigDecimal monthlyPayment = monthlyBase.add(monthlyInterest).add(monthlyTransactionFee);
 
-        return new LoanDetails(LoanType.AUTO, moneyFormat.format(monthlyPayment));
+        return new LoanDetails(LoanType.AUTO, monthlyPayment);
     }
 
     private BigDecimal getMonthlyFee() {

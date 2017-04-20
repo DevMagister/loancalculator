@@ -19,7 +19,7 @@ public class AutoLoanCalculatorTest {
         LoanTerms loanTerms = new LoanTerms(5, 500, BigDecimal.valueOf(10.0));
 
         /* Get Loan Details */
-        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanPayments();
+        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanDetails();
 
         /* Check Values */
         assertThat(details.getMonthlyPayment(), is("$111.00"));
@@ -32,7 +32,7 @@ public class AutoLoanCalculatorTest {
         LoanTerms loanTerms = new LoanTerms(12, 500, BigDecimal.valueOf(10.0));
 
         /* Get Loan Details */
-        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanPayments();
+        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanDetails();
 
         /* Check Values */
         assertThat(details.getMonthlyPayment(), is("$46.26"));
