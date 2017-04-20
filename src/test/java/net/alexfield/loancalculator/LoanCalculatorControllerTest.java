@@ -1,4 +1,4 @@
-package net.alexfield;
+package net.alexfield.loancalculator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,8 +25,8 @@ public class LoanCalculatorControllerTest {
     @Test
     public void getWelcome() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/loan-calculator")
-        .accept(MediaType.APPLICATION_JSON))
+        .accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Why yes, I am the Loan Calculator! Thanks for visiting")));
+                .andExpect(content().string(equalTo("Why yes, I am the Loan Calculator! Thanks for visiting!")));
     }
 }

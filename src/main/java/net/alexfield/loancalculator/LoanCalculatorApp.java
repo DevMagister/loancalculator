@@ -1,4 +1,4 @@
-package net.alexfield;
+package net.alexfield.loancalculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
