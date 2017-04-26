@@ -18,6 +18,15 @@ public class HomeLoanCalculator extends AbstractLoanCalculator
     @Override
     public LoanDetails getLoanDetails()
     {
-        return null;
+        /* Get Base Monthly Payment */
+        BigDecimal basePayment = calculateBaseMonthlyPayment();
+
+        /* Get Interest Monthly Payment */
+        BigDecimal interestPayment = calculateEvenlyDispersedInterestPayments();
+
+        /* Calculate Monthly Payment */
+        BigDecimal monthlyPayment = basePayment.add(interestPayment);
+
+        return new LoanDetails(LoanType.HOME, monthlyPayment);
     }
 }
