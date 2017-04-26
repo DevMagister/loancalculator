@@ -5,6 +5,10 @@ import java.math.BigDecimal;
 import net.alexfield.loancalculator.api.LoanDetails;
 import net.alexfield.loancalculator.api.LoanTerms;
 
+/**
+ * This class represents a Home Loan Calculator and contains the details of what it takes to Calculate a the monthly
+ * payment for a Home Loan.
+ */
 public class HomeLoanCalculator extends AbstractLoanCalculator
 {
     /**
