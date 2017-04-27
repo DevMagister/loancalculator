@@ -1,5 +1,7 @@
 package net.alexfield.loancalculator;
 
+import net.alexfield.loancalculator.api.LoanTerms;
+import net.alexfield.loancalculator.calculators.LoanType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import java.math.BigDecimal;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -28,5 +32,14 @@ public class LoanCalculatorControllerTest {
         .accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Why yes, I am the Loan Calculator! Thanks for visiting!")));
+    }
+
+    @Test
+    public void getMonthlyPaymentForAutoLoanTest() throws Exception {
+
+//        mvc.perform(MockMvcRequestBuilders.post("/loan-calculator").contentType(MediaType.APPLICATION_JSON)
+//                .content(new LoanTerms(5, 500, BigDecimal.valueOf(10), LoanType.AUTO))
+//        .accept(MediaType.APPLICATION_JSON))
+//        .andExpect(status().isOk());
     }
 }

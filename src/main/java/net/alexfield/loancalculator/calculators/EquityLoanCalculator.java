@@ -15,7 +15,7 @@ public class EquityLoanCalculator extends AbstractLoanCalculator {
     }
 
     @Override
-    public LoanDetails getLoanDetails()
+    public LoanDetails calculateLoanDetails()
     {
         /* Get Base Payment */
         BigDecimal baseMonthlyPayment = calculateBaseMonthlyPayment();

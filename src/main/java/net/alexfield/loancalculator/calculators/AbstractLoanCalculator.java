@@ -36,7 +36,7 @@ public abstract class AbstractLoanCalculator {
      *
      * @return loan details
      */
-    public abstract LoanDetails getLoanDetails();
+    public abstract LoanDetails calculateLoanDetails();
 
     /**
      * This method will return the base monthly payment for this loan

@@ -32,10 +32,11 @@ public class LoanTerms {
      * @param loanAmount total amount to be borrowed
      * @param interest   interest on the loan
      */
-    public LoanTerms(int numMonths, int loanAmount, BigDecimal interest) {
+    public LoanTerms(int numMonths, int loanAmount, BigDecimal interest, LoanType type) {
 
         this.numMonths = numMonths;
         this.loanAmount = loanAmount;
         this.interest = interest;
+        this.type = type;
     }
 }

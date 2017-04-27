@@ -3,6 +3,7 @@ package net.alexfield.loancalculator;
 import net.alexfield.loancalculator.api.LoanDetails;
 import net.alexfield.loancalculator.api.LoanTerms;
 import net.alexfield.loancalculator.calculators.AutoLoanCalculator;
+import net.alexfield.loancalculator.calculators.LoanType;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -16,10 +17,10 @@ public class AutoLoanCalculatorTest {
     public void testAutoLoanCalculator() {
 
         /* Create Loan Terms */
-        LoanTerms loanTerms = new LoanTerms(5, 500, BigDecimal.valueOf(10.0));
+        LoanTerms loanTerms = new LoanTerms(5, 500, BigDecimal.valueOf(10.0), LoanType.AUTO);
 
         /* Get Loan Details */
-        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanDetails();
+        LoanDetails details = new AutoLoanCalculator(loanTerms).calculateLoanDetails();
 
         /* Check Values */
         assertThat(details.getMonthlyPayment(), is("$111.00"));
@@ -29,10 +30,10 @@ public class AutoLoanCalculatorTest {
     public void testDecimalAutoLoan() {
 
         /* Create Loan Terms */
-        LoanTerms loanTerms = new LoanTerms(12, 500, BigDecimal.valueOf(10.0));
+        LoanTerms loanTerms = new LoanTerms(12, 500, BigDecimal.valueOf(10.0), LoanType.AUTO);
 
         /* Get Loan Details */
-        LoanDetails details = new AutoLoanCalculator(loanTerms).getLoanDetails();
+        LoanDetails details = new AutoLoanCalculator(loanTerms).calculateLoanDetails();
 
         /* Check Values */
         assertThat(details.getMonthlyPayment(), is("$46.26"));

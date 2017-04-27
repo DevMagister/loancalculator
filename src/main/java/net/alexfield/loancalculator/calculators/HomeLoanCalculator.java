@@ -20,7 +20,7 @@ public class HomeLoanCalculator extends AbstractLoanCalculator
     }
 
     @Override
-    public LoanDetails getLoanDetails()
+    public LoanDetails calculateLoanDetails()
     {
         /* Get Base Monthly Payment */
         BigDecimal basePayment = calculateBaseMonthlyPayment();

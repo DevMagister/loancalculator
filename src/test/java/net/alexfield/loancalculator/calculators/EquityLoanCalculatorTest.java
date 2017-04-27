@@ -16,10 +16,10 @@ public class EquityLoanCalculatorTest
     public void testEquityLoanCalculator() {
 
         /* Create Loan Terms */
-        LoanTerms loanTerms = new LoanTerms(120, 50000, BigDecimal.valueOf(8));
+        LoanTerms loanTerms = new LoanTerms(120, 50000, BigDecimal.valueOf(8), LoanType.EQUITY);
 
         /* Calculate Loan Details */
-        LoanDetails loanDetails = new EquityLoanCalculator(loanTerms).getLoanDetails();
+        LoanDetails loanDetails = new EquityLoanCalculator(loanTerms).calculateLoanDetails();
 
         assertThat(loanDetails.getMonthlyPayment(), is("$458.33"));
     }

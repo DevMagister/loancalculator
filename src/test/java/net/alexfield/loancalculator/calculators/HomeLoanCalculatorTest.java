@@ -16,9 +16,9 @@ public class HomeLoanCalculatorTest
     public void testHomeLoanCalculatorTest() {
 
         /* Create Loan Terms */
-        LoanTerms loanTerms = new LoanTerms(360, 100000, BigDecimal.valueOf(5.0));
+        LoanTerms loanTerms = new LoanTerms(360, 100000, BigDecimal.valueOf(5.0), LoanType.HOME);
 
-        LoanDetails loanDetails = new HomeLoanCalculator(loanTerms).getLoanDetails();
+        LoanDetails loanDetails = new HomeLoanCalculator(loanTerms).calculateLoanDetails();
 
         assertThat(loanDetails.getMonthlyPayment(), is("$291.67"));
     }

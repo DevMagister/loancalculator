@@ -35,7 +35,7 @@ public class LoanCalculatorController {
 
         switch (loanTerms.getType()) {
             case AUTO:
-                return new AutoLoanCalculator(loanTerms).getLoanDetails();
+                return new AutoLoanCalculator(loanTerms).calculateLoanDetails();
             default:
                 return null;
         }

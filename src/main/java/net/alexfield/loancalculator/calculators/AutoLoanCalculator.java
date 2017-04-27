@@ -23,7 +23,7 @@ public class AutoLoanCalculator extends AbstractLoanCalculator {
     }
 
     @Override
-    public LoanDetails getLoanDetails() {
+    public LoanDetails calculateLoanDetails() {
 
         /* Calculate Monthly Base Payment */
         BigDecimal monthlyBase = calculateBaseMonthlyPayment();
@@ -32,7 +32,7 @@ public class AutoLoanCalculator extends AbstractLoanCalculator {
         BigDecimal monthlyInterest = calculateEvenlyDispersedInterestPayments();
 
         /* Calculate Monthly Transaction Fee */
-        BigDecimal monthlyTransactionFee = getMonthlyFee();
+        BigDecimal monthlyTransactionFee = calculateMonthlyFee();
 
         /* Calculate Monthly Payment */
         BigDecimal monthlyPayment = monthlyBase.add(monthlyInterest).add(monthlyTransactionFee);
@@ -45,7 +45,7 @@ public class AutoLoanCalculator extends AbstractLoanCalculator {
      *
      * @return Monthly fee amount in dollars
      */
-    private BigDecimal getMonthlyFee() {
+    private BigDecimal calculateMonthlyFee() {
         return getLoanAmount().multiply(FEE_PERCENTAGE)
                 .divide(BigDecimal.valueOf(getNumMonths()), BigDecimal.ROUND_HALF_UP);
     }
